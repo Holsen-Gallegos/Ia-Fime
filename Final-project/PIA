@@ -1,0 +1,12 @@
+# Subir tu archivo kaggle.json desde tu cuenta
+from google.colab import files
+files.upload()  # <-- Aquí sube tu kaggle.json
+
+# Crear la carpeta y copiar el archivo
+!mkdir -p ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+
+# Descargar el dataset
+!kaggle datasets download -d uraninjo/augmented-alzheimer-mri-dataset
+!unzip -q augmented-alzheimer-mri-dataset.zip -d alzheimer_data
